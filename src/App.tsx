@@ -8,6 +8,8 @@ import { Oscar } from './components/props/oscar';
 import { Status } from './components/props/status';
 import { Button } from './components/props/button';
 import { Container } from './components/props/container';
+import { User } from './components/state/user';
+import { Counter } from './components/state/counter';
 
 function App() {
   const personName = {
@@ -34,6 +36,8 @@ function App() {
     <Status status="loading"/>
     <Button handleClick={(event,id)=>console.log("Button Clicked",event,id)}/>
       <Container styles={{padding:"1rem", border:"1px solid black",margin:"6px 0px 0px 0px"}}/>
+      <User/>
+      <Counter/>
     </div>
   );
 }
