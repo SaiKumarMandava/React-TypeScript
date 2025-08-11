@@ -10,7 +10,13 @@ import { Button } from './components/props/button';
 import { Container } from './components/props/container';
 import { User } from './components/state/user';
 import { Counter } from './components/state/counter';
-
+import { ThemeContextProvider } from './components/context/themeContext';
+import { Box } from './components/context/box';
+import { UserContextProvider } from './components/context/userContext';
+import { Users } from './components/context/user';
+import { CounterClass } from './components/class/counter';
+import { Private } from './components/auth/private';
+import { Profile } from './components/auth/profile';
 function App() {
   const personName = {
     firstName:"Sai",
@@ -38,6 +44,18 @@ function App() {
       <Container styles={{padding:"1rem", border:"1px solid black",margin:"6px 0px 0px 0px"}}/>
       <User/>
       <Counter/>
+      
+      <ThemeContextProvider>
+        <Box/>
+      </ThemeContextProvider>
+
+      <UserContextProvider>
+        <Users/>
+      </UserContextProvider>
+
+      <CounterClass message="Count value is :- "/>
+
+      <Private isLoggedIn={true} Component={Profile}/>
     </div>
   );
 }
